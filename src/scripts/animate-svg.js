@@ -4,7 +4,8 @@
   const OFFSET = 32;
 
   // Immediately Executed Code:
-  document.addEventListener("DOMContentLoaded", initializeSVGPaths);
+  // document.addEventListener("DOMContentLoaded", initializeSVGPaths);
+  window.addEventListener("load", initializeSVGPaths);
 
   // Function Definitions
   function initializeSVGPaths() {
