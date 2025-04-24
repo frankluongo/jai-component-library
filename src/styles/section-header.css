@@ -1,0 +1,24 @@
+.section-header\:column-image {
+  position: relative;
+
+  --max-width: 18.75rem;
+  flex: 1 1 var(--max-width);
+  max-width: 18.75rem;
+}
+
+.section-header\:point-connect {
+  position: absolute;
+  top: 1rem;
+  right: 7rem;
+}
+
+.section-header\:column-text {
+  flex: 1 1 auto;
+}
+
+.section-header\:text {
+  --max-width: 33rem;
+
+  max-width: var(--max-width);
+  width: 100%;
+}

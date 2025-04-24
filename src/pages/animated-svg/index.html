@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated SVG</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="wrapper">
+    <header class="header box">
+      <div class="container box">header</div>
+    </header>
+    <div class="wrapper box">
+      <div class="container row box">
+        <aside class="box flex-col:20">sidebar</aside>
+        <section class="main-content-area flex-col:rest box">
+          <div style="height: 900px"></div>
+          <div class="hero row align-center">
+            <div class="box column flex-col:50">
+              <header class="column column--sm">
+                <h1>Hero title here</h1>
+                <small>Some little tiny text here</small>
+                <hr />
+              </header>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                animi id eius cumque saepe, quas porro voluptatibus pariatur
+                ipsa aut inventore, adipisci distinctio architecto odio optio
+                repellendus nesciunt blanditiis natus?
+              </p>
+              <footer class="row">
+                <a
+                  href="#"
+                  id="view-services-button"
+                  data-point
+                  data-connects="point-services"
+                  >View services</a
+                >
+                <a href="#" id="about-me-button" aria-controls="about-me"
+                  >Learn about me</a
+                >
+              </footer>
+            </div>
+            <div class="box flex-col:50">
+              <div class="image image--square"></div>
+            </div>
+          </div>
+          <!-- //////////////////////////////////// -->
+          <div class="row align-center">
+            <div class="box flex-col:50">
+              <div class="image image--square point:container">
+                <div class="point point--top-right" id="point-services"></div>
+              </div>
+            </div>
+            <div class="box column flex-col:50">
+              <h1>Hero title here</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                animi id eius cumque saepe, quas porro voluptatibus pariatur
+                ipsa aut inventore, adipisci distinctio architecto odio optio
+                repellendus nesciunt blanditiis natus?
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <svg id="page-lines"></svg>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

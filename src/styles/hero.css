@@ -1,0 +1,17 @@
+.hero\:text-column {
+  --max-width: 32rem;
+
+  flex: 1 1 var(--max-width);
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.hero\:image-column {
+  flex: 1 1 200px;
+}
+
+.hero\:image {
+  aspect-ratio: 563 / 520;
+  height: auto;
+  max-width: 100%;
+}

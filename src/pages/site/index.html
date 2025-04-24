@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site build</title>
+    <link rel="stylesheet" href="../../styles/app.css" />
+    <link rel="stylesheet" href="../../styles/hero.css" />
+    <link rel="stylesheet" href="../../styles/section-header.css" />
+  </head>
+  <body>
+    <!-- =========================================================== -->
+    <header class="site-header">
+      <div class="container">header content</div>
+    </header>
+    <main class="flex">
+      <div class="container flex">
+        <aside class="sidebar">
+          <div id="timeline"></div>
+        </aside>
+        <section class="flex flex--columns gap--xl">
+          <!-- =========================================================== -->
+          <div class="hero">
+            <div
+              class="hero:content flex gap--lg align:center flex--wrap justify:center"
+            >
+              <section class="hero:text-column flex flex--columns gap">
+                <header class="flex flex--columns gap--sm">
+                  <h2 class="color:heading--default">Melanie D. Krummel</h2>
+                  <p class="h6 color:subheading--default">
+                    G.G., F.G.A., C.S.M. | GIA, GEM-A, NAJA, AGA
+                  </p>
+                  <hr />
+                </header>
+                <p>
+                  Melanie Krummel established Jewelry, Appraisals, Inc., with a
+                  vision to conveniently serve retail jewelry stores, law
+                  offices, insurance companies and private clientele with
+                  concise, efficiently prepared jewelry appraisals.
+                </p>
+                <footer class="flex gap">
+                  <a
+                    class="btn btn--default"
+                    href="#"
+                    id="view-services-button"
+                    data-point
+                    data-connects="gemological-point"
+                    >View Services</a
+                  >
+                  <a class="btn btn--default" href="#">Learn about me</a>
+                </footer>
+              </section>
+              <section class="hero:image-column flex justify:center">
+                <img
+                  class="hero:image"
+                  src="../../assets/hero-image.jpg"
+                  alt="Melanie D. Krummel"
+                />
+              </section>
+            </div>
+          </div>
+          <!-- =========================================================== -->
+          <div
+            class="section-header flex flex--wrap align:center justify:center gap--lg"
+          >
+            <div class="section-header:column-image">
+              <img
+                src="../../assets/section-images.jpg"
+                alt="Gemological Services"
+                id="gemological-services-image"
+              />
+              <div
+                id="gemological-point"
+                class="section-header:point-connect"
+              ></div>
+            </div>
+            <section class="section-header:column-text">
+              <div class="section-header:text flex flex--columns gap">
+                <h2 class="color:heading--default">
+                  Gemological Services Offered
+                </h2>
+                <p>
+                  Whether you are looking for a written appraisal document or an
+                  estate jewelry consultant, this process can be done while you
+                  watch in my office or yours, the privacy of your home or bank
+                  and at a conveniently located jewelry partner near you.
+                </p>
+              </div>
+            </section>
+          </div>
+          <!-- =========================================================== -->
+        </section>
+      </div>
+    </main>
+    <footer class="">
+      <div class="container">footer content</div>
+    </footer>
+    <!-- =========================================================== -->
+    <svg id="page-lines"></svg>
+    <script src="../../scripts/animate-svg.js"></script>
+  </body>
+</html>
