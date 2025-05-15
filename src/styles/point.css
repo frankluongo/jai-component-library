@@ -1,0 +1,22 @@
+.point-container {
+  position: relative;
+}
+
+.point-end {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.point-end--right {
+  right: 0;
+}
+
+.point-start {
+  top: 100%;
+  position: absolute;
+  left: 50%;
+
+  transform: translateX(-50%);
+}

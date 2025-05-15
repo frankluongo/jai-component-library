@@ -1,0 +1,10 @@
+.site-footer {
+  margin-top: 6rem;
+  padding-block: 6rem;
+
+  background: linear-gradient(180deg, #e9f4fc 0%, #ffffff 100%);
+}
+
+.site-footer\:container {
+  padding-inline: clamp(1rem, 5vw, 14rem);
+}

@@ -1,0 +1,25 @@
+#timeline {
+  height: 100%;
+  width: 1px;
+  background: var(--color-call-to-action--default);
+}
+
+.timeline\:point {
+  --size: 1.5rem;
+
+  position: absolute;
+  left: 50%;
+
+  height: var(--size);
+  width: var(--size);
+
+  background: var(--color-call-to-action--inverse);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity var(--transition);
+}
+
+.timeline\:point[data-visible="true"] {
+  opacity: 1;
+}

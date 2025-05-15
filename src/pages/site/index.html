@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../../styles/app.css" />
     <link rel="stylesheet" href="../../styles/hero.css" />
     <link rel="stylesheet" href="../../styles/section-header.css" />
+    <link rel="stylesheet" href="../../styles/sub-section.css" />
+    <link rel="stylesheet" href="../../styles/timeline.css" />
+    <link rel="stylesheet" href="../../styles/point.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
   </head>
   <body>
     <!-- =========================================================== -->
@@ -15,10 +19,27 @@
     </header>
     <main class="flex">
       <div class="container flex">
-        <aside class="sidebar">
-          <div id="timeline"></div>
+        <aside class="sidebar" id="sidebar">
+          <div id="timeline">
+            <div
+              class="timeline:point timeline-point"
+              data-aligns="hero-description"
+            ></div>
+            <div
+              class="timeline:point timeline-point"
+              data-aligns="gemological-services-heading"
+            ></div>
+            <div
+              class="timeline:point timeline-point"
+              data-aligns="about-the-appraiser-heading"
+            ></div>
+            <div
+              class="timeline:point timeline-point"
+              data-aligns="get-in-touch-heading"
+            ></div>
+          </div>
         </aside>
-        <section class="flex flex--columns gap--xl">
+        <div class="flex flex--columns gap--xl" id="main-content">
           <!-- =========================================================== -->
           <div class="hero">
             <div
@@ -32,22 +53,29 @@
                   </p>
                   <hr />
                 </header>
-                <p>
+                <p id="hero-description">
                   Melanie Krummel established Jewelry, Appraisals, Inc., with a
                   vision to conveniently serve retail jewelry stores, law
                   offices, insurance companies and private clientele with
                   concise, efficiently prepared jewelry appraisals.
                 </p>
                 <footer class="flex gap">
-                  <a
-                    class="btn btn--default"
-                    href="#"
-                    id="view-services-button"
-                    data-point
-                    data-connects="gemological-point"
-                    >View Services</a
+                  <div class="point-container">
+                    <a
+                      class="btn btn--default"
+                      href="#gemological-services"
+                      id="view-services-button"
+                      >View Services</a
+                    >
+                    <div
+                      class="point-start"
+                      data-point
+                      data-connects="gemological-point"
+                    ></div>
+                  </div>
+                  <a class="btn btn--default" href="#about-the-appraiser"
+                    >Learn about me</a
                   >
-                  <a class="btn btn--default" href="#">Learn about me</a>
                 </footer>
               </section>
               <section class="hero:image-column flex justify:center">
@@ -60,43 +88,499 @@
             </div>
           </div>
           <!-- =========================================================== -->
-          <div
-            class="section-header flex flex--wrap align:center justify:center gap--lg"
-          >
-            <div class="section-header:column-image">
-              <img
-                src="../../assets/section-images.jpg"
-                alt="Gemological Services"
-                id="gemological-services-image"
-              />
+          <section class="flex flex--columns gap--xl" id="gemological-services">
+            <header
+              class="section-header flex flex--wrap align:center justify:center gap--lg"
+              id="gemological-services-section"
+            >
               <div
-                id="gemological-point"
-                class="section-header:point-connect"
-              ></div>
-            </div>
-            <section class="section-header:column-text">
-              <div class="section-header:text flex flex--columns gap">
-                <h2 class="color:heading--default">
-                  Gemological Services Offered
-                </h2>
-                <p>
-                  Whether you are looking for a written appraisal document or an
-                  estate jewelry consultant, this process can be done while you
-                  watch in my office or yours, the privacy of your home or bank
-                  and at a conveniently located jewelry partner near you.
-                </p>
+                class="section-header:column-image section-header:column--contain"
+              >
+                <img
+                  src="../../assets/section-images.jpg"
+                  alt="Gemological Services"
+                  id="gemological-services-image"
+                />
+                <div
+                  id="gemological-point"
+                  class="section-header:point-connect"
+                ></div>
+              </div>
+              <div class="section-header:column--stretch">
+                <div class="section-header:text flex flex--columns gap">
+                  <h2
+                    class="color:heading--default"
+                    id="gemological-services-heading"
+                  >
+                    Gemological Services Offered
+                  </h2>
+                  <p class="point-container">
+                    Whether you are looking for a written appraisal document or
+                    an estate jewelry consultant, this process can be done while
+                    you watch in my office or yours, the privacy of your home or
+                    bank and at a conveniently located jewelry partner near you.
+                    <span
+                      class="point-start"
+                      data-point
+                      data-connects="appraisal-types-heading-point"
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <section class="sub-section flex gap" id="appraisal-types-section">
+              <div class="sub-section:col-text flex flex--columns gap--lg">
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3 class="color:heading--default">
+                    <span class="point-container">
+                      Appraisal Types
+                      <span
+                        class="point-end point-end--right"
+                        id="appraisal-types-heading-point"
+                      ></span>
+                    </span>
+                  </h3>
+                </header>
+                <ul class="flex flex--columns gap--lg">
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Insurance Appraisal</h4>
+                    <p>
+                      To establish the average retail replacement value for your
+                      jewelry and provide a basis for obtaining insurance
+                      coverage for loss, damage or theft.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Estate / Probate</h4>
+                    <p>
+                      To establish the Fair Market Value for your jewelry and
+                      provide a basis for establishing tax liability and/or the
+                      distribution of the jewelry between the heirs.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Fair Market Value</h4>
+                    <p>
+                      A Fair Market Value appraisal is requested by an owner who
+                      wishes to convert their jewelry item(s) into cash.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Selling your jewelry</h4>
+                    <p>
+                      This process involves more than placing a monetary value
+                      on your jewelry. It is a step by step consultation of
+                      understanding the value of your jewelry and the
+                      appropriate secondary market to sell your jewelry. Jewelry
+                      Appraisal Inc, specializes in diamonds, colored stones and
+                      designer vintage jewelry.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Gemological services</h4>
+                    <p>
+                      Jewelry Appraisal Inc, offers services in the complex
+                      areas of gemstone identification, synthetic and natural
+                      stone separation, enhancements and treatments, as well as
+                      diamond grading and colored stone grading, pearls and
+                      antique and period jewelry.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Large collections</h4>
+                    <p>
+                      For large collections or estates, I offer on-site
+                      appraisal services in the comfort and safety of your home,
+                      office or bank. Evaluations can be performed while you
+                      watch.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="sub-section:col-image" id="appraisal-types-image">
+                <img
+                  src="../../assets/sub-section-image-01.jpg"
+                  alt="Appraisal Types"
+                  class="sub-section:image"
+                />
+                <div
+                  id="appraisal-types-point"
+                  data-point
+                  data-connects="your-appraisal-heading-point"
+                ></div>
               </div>
             </section>
-          </div>
+            <section class="sub-section flex gap" id="your-appraisal-section">
+              <div class="sub-section:col-image">
+                <img
+                  src="../../assets/sub-section-image-02.jpg"
+                  alt="Appraisal Types"
+                  class="sub-section:image"
+                />
+              </div>
+              <div class="sub-section:col-text flex flex--columns gap--lg">
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3
+                    class="color:heading--default"
+                    id="your-appraisal-heading"
+                  >
+                    <span class="point-container">
+                      Your Appraisal
+                      <span
+                        class="point-end point-end--right"
+                        id="your-appraisal-heading-point"
+                      ></span>
+                    </span>
+                  </h3>
+                </header>
+                <p>
+                  In addition to superior customer service, you will receive an
+                  accurate and thorough analysis of each piece of jewelry, which
+                  includes:
+                </p>
+                <ul class="list flex flex--columns gap">
+                  <li>Cleaning of item</li>
+                  <li>Stone Security inspection</li>
+                  <li>Gem identification</li>
+                  <li>Metal assay</li>
+                  <li>Detailed descriptions</li>
+                  <li>Detailed grading analysis of stone(s)</li>
+                  <li>Photographs</li>
+                  <li>Item valuation</li>
+                </ul>
+              </div>
+            </section>
+            <footer
+              class="sub-section flex flex--columns gap"
+              id="sample-appraisals"
+            >
+              <h3 class="color:heading--default">Sample Appraisals</h3>
+              <ul class="flex flex--wrap gap">
+                <li>
+                  <a href="#">Diamond Ring</a>
+                </li>
+                <li>
+                  <a href="#">Antique Diamond Ring</a>
+                </li>
+                <li>
+                  <a href="#">Pink Sapphire Ring</a>
+                </li>
+                <li>
+                  <a href="#">Vintage Emerald Brooch</a>
+                </li>
+                <li>
+                  <a href="#">Pearl Necklace</a>
+                </li>
+                <li>
+                  <a href="#">Gent's Watch</a>
+                </li>
+                <li>
+                  <a href="#">Lady's Watch</a>
+                </li>
+                <li>
+                  <a href="#">Antique Brooch</a>
+                </li>
+                <li>
+                  <a href="#">Antique Diamond Pendant</a>
+                </li>
+              </ul>
+            </footer>
+          </section>
           <!-- =========================================================== -->
-        </section>
+          <section class="flex flex--columns gap--xl" id="about-the-appraiser">
+            <header
+              class="section-header flex flex--wrap align:center justify:center gap--lg"
+              id="about-the-appraiser-header"
+            >
+              <div class="section-header:column-image">
+                <img
+                  src="../../assets/about-image.jpg"
+                  alt="Melanie Krummel"
+                  id="about-the-appraiser-image"
+                />
+                <div
+                  id="gemological-point"
+                  class="section-header:point-connect"
+                ></div>
+              </div>
+              <div
+                class="section-header:column-text section-header:column--stretch"
+              >
+                <div class="section-header:text flex flex--columns gap">
+                  <small class="color:heading--default"
+                    >About Your Appraiser</small
+                  >
+                  <h2
+                    class="color:heading--default"
+                    id="about-the-appraiser-heading"
+                  >
+                    Melanie Krummel
+                  </h2>
+                  <p class="paragraph--large">
+                    I established Jewelry, Appraisals, Inc., with a vision to
+                    conveniently serve retail jewelry stores, law offices,
+                    insurance companies and private clientele with concise,
+                    efficiently prepared jewelry appraisals.
+                  </p>
+                  <p>
+                    My goal is to build strong and long lasting professional
+                    relationships through trust, dedication and consistently
+                    increasing my knowledge of the ever-changing jewelry
+                    industry.
+                  </p>
+                  <p class="point-container">
+                    Over Twenty-five years of continuing education and training
+                    has developed Melanie Krummel’s expertise in the complex
+                    areas of gemstone identification, including synthetic and
+                    natural stone separation, enhancements and treatments, as
+                    well as diamonds and colored stone grading, watches, pearls
+                    and antique and period jewelry.
+                    <span
+                      data-point
+                      data-connects="gemological-education-point"
+                      class="point-start"
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <section class="sub-section flex gap" id="education-and-awards">
+              <div class="sub-section:col-text flex flex--columns gap--lg">
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3
+                    class="color:heading--default"
+                    id="appraisal-types-heading"
+                  >
+                    <span class="point-container">
+                      Gemological Education
+                      <span
+                        class="point-end point-end--right"
+                        id="gemological-education-point"
+                      ></span>
+                    </span>
+                  </h3>
+                </header>
+                <ul class="flex flex--columns gap--lg">
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Gemological Institute of America (GIA)
+                    </h4>
+                    <p>
+                      Graduate Gemologist Resident Program - Santa Monica, CA
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Gemological Association of Great Britain (GEM-A)
+                    </h4>
+                    <p>F.G.A.</p>
+                  </li>
+                </ul>
+                <br />
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3
+                    class="color:heading--default"
+                    id="appraisal-types-heading"
+                  >
+                    Major Awards
+                  </h3>
+                </header>
+                <ul class="flex flex--columns gap--lg">
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Women's Jewelry Association (Los Angeles Chapter)
+                    </h4>
+                    <p>Scholarship</p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      D. Swarovski and Company
+                    </h4>
+                    <p>Scholarship</p>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="point-container sub-section:col-image"
+                id="appraisal-types-image"
+              >
+                <img
+                  src="../../assets/gemological-education.jpg"
+                  alt="Appraisal Types"
+                  class="sub-section:image"
+                />
+                <div
+                  class="point-start"
+                  data-point
+                  data-connects="professional-memberships-heading-point"
+                ></div>
+              </div>
+            </section>
+            <section class="sub-section flex gap" id="your-appraisal-section">
+              <div class="sub-section:col-image">
+                <img
+                  src="../../assets/sub-section-image-02.jpg"
+                  alt="Appraisal Types"
+                  class="sub-section:image"
+                />
+              </div>
+              <div class="sub-section:col-text flex flex--columns gap--lg">
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3 class="color:heading--default">
+                    <span class="point-container">
+                      Professional memberships
+                      <span
+                        class="point-end point-end--right"
+                        id="professional-memberships-heading-point"
+                      ></span>
+                    </span>
+                  </h3>
+                </header>
+                <ul class="flex flex--columns gap--lg">
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      National Association of Jewelry Appraisers
+                    </h4>
+                    <p>Certified Senior Member</p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Gemological Association of Great Britain
+                    </h4>
+                    <p>Fellow</p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Accredited Gemologist Association
+                    </h4>
+                    <p>Senior Gemologist</p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      American Society of Appraisers
+                    </h4>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">
+                      Gemological Institute of America Alumni Association
+                    </h4>
+                  </li>
+                  <li
+                    class="line-item flex flex--columns gap--xs"
+                    data-point
+                    data-connects="get-in-touch-heading"
+                  >
+                    <h4 class="color:heading--default">
+                      The American Society of Jewelry Historians
+                    </h4>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </section>
+          <!-- =========================================================== -->
+          <section class="flex flex--columns gap--xl" id="get-in-touch">
+            <header
+              class="section-header flex flex--wrap align:center justify:center gap--lg"
+              id="get-in-touch-header"
+            >
+              <div class="section-header:column-image">
+                <img
+                  src="../../assets/get-in-touch.jpg"
+                  alt="Melanie Krummel"
+                  id="about-the-appraiser-image"
+                />
+                <div
+                  id="gemological-point"
+                  class="section-header:point-connect"
+                ></div>
+              </div>
+              <div
+                class="section-header:column-text section-header:column--stretch"
+              >
+                <div class="section-header:text flex flex--columns gap">
+                  <h2 class="color:heading--default" id="get-in-touch-heading">
+                    Get in touch
+                  </h2>
+                  <p class="point-container">
+                    Jewelry Appraisals, Inc. is a professional independent
+                    jewelry appraisal service and gemological laboratory owned
+                    and operated by Melanie D. Krummel, GG, FGA, CSM. She has 25
+                    years of experience and values jewelry for the purposes of
+                    Insurance Replacement, Estate, and Probate, Fair Market
+                    Value and Selling your jewelry. Schedule an appointment and
+                    have your questions answer while you watch.
+                    <span
+                      class="point-start"
+                      data-point
+                      data-connects="contact-information-heading-text"
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <section class="sub-section flex gap" id="education-and-awards">
+              <div class="sub-section:col-text flex flex--columns gap--lg">
+                <header class="sub-section-header">
+                  <div class="sub-section-header:circle"></div>
+                  <h3
+                    class="color:heading--default"
+                    id="contact-information-heading"
+                  >
+                    <span class="point-container">
+                      Contact Information
+                      <span
+                        id="contact-information-heading-text"
+                        class="point-end point-end--right"
+                      ></span>
+                    </span>
+                  </h3>
+                </header>
+                <ul class="flex flex--columns gap--lg">
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Office Address*</h4>
+                    <p>
+                      215 N Washington Street, <br />
+                      Suite 2B Havre De Grace, MD 21078
+                    </p>
+                    <p>
+                      *NOTE: Please schedule an appointment before visiting.
+                    </p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Email Address</h4>
+                    <p>melanie@askagemologist.com</p>
+                  </li>
+                  <li class="line-item flex flex--columns gap--xs">
+                    <h4 class="color:heading--default">Phone Number</h4>
+                    <p>410.804.0893</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="sub-section:col-image" id="appraisal-types-image">
+                <img
+                  src="../../assets/get-in-touch-body.jpg"
+                  alt="Appraisal Types"
+                  class="sub-section:image"
+                />
+              </div>
+            </section>
+          </section>
+          <!-- =========================================================== -->
+        </div>
       </div>
     </main>
-    <footer class="">
-      <div class="container">footer content</div>
+    <footer class="site-footer">
+      <div class="container site-footer:container">footer content</div>
     </footer>
     <!-- =========================================================== -->
     <svg id="page-lines"></svg>
     <script src="../../scripts/animate-svg.js"></script>
+    <script src="../../scripts/timeline.js"></script>
   </body>
 </html>

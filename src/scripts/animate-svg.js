@@ -17,6 +17,11 @@
     ).map(addPathToPoint);
     const coordinates = pointsAndPaths.map(createCoordinatesMap);
 
+    const options = {
+      rootMargin: "0px",
+      threshold: 1.0,
+    };
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -24,7 +29,7 @@
           animatePath(path);
         }
       });
-    });
+    }, options);
 
     // ACTIONS:
     // =============================================================
@@ -50,26 +55,38 @@
     function createCoordinatesMap({ point, path }) {
       // The svg container that takes up the whole page:
       const containerRect = container.getBoundingClientRect();
-      // The starting point element:
+      const end = document.querySelector(`#${point.dataset.connects}`);
+
+      // Step 1: Get the start and endpoint element coordinates.
       const startRect = point.getBoundingClientRect();
+      const endRect = end.getBoundingClientRect();
+
+      // Step 2: Figure out the direction
+      const direction = endRect.left - startRect.left > 0 ? "right" : "left";
+
+      // Step 3: Figure out the offsetX, based on the direction:
+      const offsetX = direction === "right" ? -OFFSET : OFFSET;
+
+      // Step 4: Get the start and end values:
       const startX = startRect.left - containerRect.left + startRect.width / 2;
       const startY =
         startRect.top - containerRect.top + startRect.height / 2 + OFFSET;
-      // The ending point element:
-      const end = document.querySelector(`#${point.dataset.connects}`);
-      const endRect = end.getBoundingClientRect();
       const endX =
-        endRect.left - containerRect.left + endRect.width / 2 - OFFSET;
+        endRect.left - containerRect.left + endRect.width / 2 + offsetX;
       const endY = endRect.top - containerRect.top + endRect.height / 2;
-      return { path, startX, startY, endX, endY };
+
+      return { direction, path, startX, startY, endX, endY };
     }
 
-    function drawPath({ path, startX, startY, endX, endY }) {
+    function drawPath({ direction, path, startX, startY, endX, endY }) {
       // Define the path data for an "L" shape with a curved corner
+      const curveDirection =
+        direction === "right" ? CURVE_RADIUS : -CURVE_RADIUS;
+
       const pathData = `
         M ${startX} ${startY} 
         L ${startX} ${endY - CURVE_RADIUS} 
-        Q ${startX} ${endY} ${startX + CURVE_RADIUS} ${endY} 
+        Q ${startX} ${endY} ${startX + curveDirection} ${endY} 
         L ${endX} ${endY}
       `;
       path.setAttribute("d", pathData.trim());

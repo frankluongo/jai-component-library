@@ -212,8 +212,11 @@
     /* =========================================== */
     --color-background--default: var(--color-white);
     --color-call-to-action--default: var(--color-celestial-blue);
+    --color-call-to-action--inverse: var(--color-cocoa-brown--tint-30);
     --color-border--default: var(--color-celestial-blue--tint-80);
     --color-heading--default: var(--color-celestial-blue--shade-10);
+    --color-link--default: var(--color-celestial-blue);
+    --color-link--active: var(--color-celestial-blue--shade-40);
     --color-text--default: var(--color-celestial-blue--shade-60);
     --color-text--inverse: var(--color-white);
     --color-text--shade: var(--color-gray--tint-30);
@@ -244,10 +247,21 @@
     box-sizing: border-box;
   }
 
+  a {
+    color: var(--color-link--default);
+    transition: color var(--transition);
+  }
+
+  a:is(:hover, :focus, :focus-visible) {
+    color: var(--color-link--active);
+  }
+
   html {
     position: relative;
     min-height: 100%;
     height: max-content;
+
+    scroll-behavior: smooth;
   }
 
   body {
@@ -264,6 +278,10 @@
 }
 
 @layer typography {
+  a {
+    font-size: 0.875rem;
+  }
+
   html {
     color: var(--color-text--default);
     font-family: var(--font-primary);
@@ -284,11 +302,17 @@
   }
   h3,
   .h3 {
-    font-size: clamp(1.5rem, 4vw, var(--font-size--2xl));
+    font-size: 1.5rem; /* 1.5rem; */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
   h4,
   .h4 {
-    font-size: clamp(1.25rem, 3vw, var(--font-size--xl));
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
   h5,
   .h5 {
@@ -300,14 +324,20 @@
   }
   p,
   .paragraph {
-    font-size: var(--font-size--default);
+    font-size: 0.875rem; /* var(--font-size--default); */
     font-weight: 400;
     line-height: 1.6;
   }
 
+  .paragraph--large {
+    font-size: 1.25rem;
+  }
+
   small,
   .small {
-    font-size: var(--font-size--xs);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }
 
@@ -353,7 +383,11 @@
   }
 
   .gap--xl {
-    gap: 3rem;
+    gap: 6rem;
+  }
+
+  .gap--xs {
+    gap: 0.25rem;
   }
 
   .justify\:center {
@@ -420,6 +454,19 @@
   }
 }
 
+@layer line-item {
+  .line-item {
+    padding-left: 0.5rem;
+  }
+}
+
+@layer list {
+  .list {
+    padding-left: 1.5rem;
+    list-style: disc;
+  }
+}
+
 /* END: COMPONENTS */
 
 @layer siteheader {
@@ -453,10 +500,5 @@
   height: 100%;
 
   pointer-events: none;
-}
-
-#timeline {
-  height: 100%;
-  width: 1px;
-  background: var(--color-call-to-action--default);
+  opacity: 0.25;
 }
